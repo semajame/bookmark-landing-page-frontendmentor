@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+@import "./media.css";
 body {
   font-family: "Rubik", sans-serif;
   min-height: 100vh;
@@ -363,15 +364,25 @@ main {
 }
 .stay-up .error.active {
   display: inline;
-  position: absolute;
   background-color: #fa5757;
-  margin-top: 1.2rem;
-  margin-left: -17.7rem;
+  margin-top: -1.5rem;
   font-size: 0.7rem !important;
   text-transform: none !important;
   padding: 2rem 6rem 0.5rem 0.5rem;
   letter-spacing: normal;
   border-radius: 0 0 5px 5px;
+  text-align: left;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
 }
 
 .email {
@@ -379,7 +390,6 @@ main {
   border: none;
   padding: 0.725rem 1.5rem;
   color: hsl(229, 31%, 21%);
-  margin-right: 0.825rem;
   outline: none;
   position: relative;
   z-index: 2;
@@ -387,7 +397,7 @@ main {
 .email.active {
   background: url(/images/icon-error.svg) no-repeat right;
   background-color: hsl(0, 0%, 100%);
-  background-position: 235px;
+  background-position: 15rem;
   border: 1px solid #fa5757;
 }
 .email::-moz-placeholder {
@@ -402,6 +412,7 @@ main {
   background-color: hsl(0, 94%, 66%);
   border-radius: 5px;
   border: none;
+  margin-top: 1rem;
   padding: 0.725rem 1.5rem;
 }
 .contact-us:hover {
@@ -453,6 +464,9 @@ footer nav ul li a:hover {
     left: 1rem !important;
     right: 1rem !important;
   }
+  .stay-up {
+    height: 500px;
+  }
 }
 @media (max-width: 575.98px) {
   header, main {
@@ -461,6 +475,14 @@ footer nav ul li a:hover {
   .hero-container h1 {
     font-size: clamp(2rem, 8vw, 0.725rem);
     line-height: 40px;
+  }
+}
+@media (max-width: 767.98px) {
+  .email-container {
+    max-width: 250px;
+  }
+  .email.active {
+    background-position: 14rem !important;
   }
 }
 @media (max-width: 991.98px) {
@@ -597,6 +619,21 @@ footer nav ul li a:hover {
   }
   .email {
     margin-right: 0;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 0;
+  }
+  .email-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  .email.active {
+    background: url(/images/icon-error.svg) no-repeat right;
+    background-color: hsl(0, 0%, 100%);
+    background-position: 23rem;
+    border: 1px solid #fa5757;
   }
   .contact-us {
     margin-top: 1rem;
